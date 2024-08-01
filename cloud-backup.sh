@@ -3,6 +3,9 @@
 # directory to back up
 DIR=""
 
+# timestamp for folder name
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
 # compress directory for backup
 tar -czf "$DIR-$TIMESTAMP.tar.gz" "$DIR"
 
@@ -10,9 +13,6 @@ tar -czf "$DIR-$TIMESTAMP.tar.gz" "$DIR"
 REMOTE1=":"
 REMOTE2=":"
 REMOTE3=":"
-
-# timestamp for folder names
-TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
 # this script is designed to use the 3-2-1 backup rule, which means:
 # 3 copies of the data
