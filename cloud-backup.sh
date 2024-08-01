@@ -3,6 +3,9 @@
 # directory to back up
 DIR=""
 
+# compress directory for backup
+tar -czf "$DIR-$TIMESTAMP.tar.gz" "$DIR"
+
 # rclone remotes to back up to
 REMOTE1=":"
 REMOTE2=":"
@@ -17,10 +20,10 @@ TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 # 1 off site backup 
 
 # backup 1
-rclone sync "$DIR" "$REMOTE1/$TIMESTAMP"
+rclone sync "$DIR" "$REMOTE1/cloud-backup"
 
 # backup 2
-rclone sync "$DIR" "$REMOTE2/$TIMESTAMP"
+rclone sync "$DIR" "$REMOTE2/cloud-backup"
 
 # backup 3, off site
-rclone sync --crypt "$DIR" "$REMOTE3/$TIMESTAMP"
+rclone sync --crypt "$DIR" "$REMOTE3/cloud-backup"
