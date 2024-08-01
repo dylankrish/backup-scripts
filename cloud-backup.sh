@@ -3,10 +3,7 @@
 # directory to back up
 DIR=""
 
-# folder in remote to back up to
-REMOTE_FOLDER="backup-folder"
-
-# name of compressed archive
+# name of backup
 BACKUP_NAME="backup"
 
 # timestamp for folder name
@@ -26,13 +23,13 @@ REMOTE3=":"
 # 1 off site backup 
 
 # backup 1
-rclone copy "$BACKUP_NAME-$TIMESTAMP.tar.gz" "$REMOTE1/$REMOTE_FOLDER"
+rclone copy "$BACKUP_NAME-$TIMESTAMP.tar.gz" "$REMOTE1/$BACKUP_NAME"
 
 # backup 2
-rclone copy "$BACKUP_NAME-$TIMESTAMP.tar.gz" "$REMOTE2/$REMOTE_FOLDER"
+rclone copy "$BACKUP_NAME-$TIMESTAMP.tar.gz" "$REMOTE2/$BACKUP_NAME"
 
 # backup 3, off site
-rclone copy --crypt "$BACKUP_NAME-$TIMESTAMP.tar.gz" "$REMOTE3/$REMOTE_FOLDER"
+rclone copy --crypt "$BACKUP_NAME-$TIMESTAMP.tar.gz" "$REMOTE3/$BACKUP_NAME"
 
 # remove compressed archive once finished to save space
 rm $BACKUP_NAME-$TIMESTAMP.tar.gz
