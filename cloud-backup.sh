@@ -3,8 +3,8 @@
 # directory to back up
 DIR=""
 
-# name of folder in remote to back up to
-REMOTE_FOLDER="cloud-backup"
+# folder in remote to back up to
+REMOTE_FOLDER="backup-folder"
 
 # name of compressed archive
 BACKUP_NAME="backup"
