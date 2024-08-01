@@ -6,11 +6,14 @@ DIR=""
 # name of folder in remote to back up to
 REMOTE_FOLDER="cloud-backup"
 
+# name of compressed archive
+BACKUP_NAME="backup"
+
 # timestamp for folder name
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
 # compress directory for backup
-tar -czf "$DIR-$TIMESTAMP.tar.gz" "$DIR"
+tar -czf "$BACKUP_NAME-$TIMESTAMP.tar.gz" "$DIR"
 
 # rclone remotes to back up to
 REMOTE1=":"
