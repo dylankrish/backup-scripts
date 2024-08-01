@@ -3,6 +3,9 @@
 # directory to back up
 DIR=""
 
+# name of folder in remote to back up to
+REMOTE_FOLDER="cloud-backup"
+
 # timestamp for folder name
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
@@ -20,10 +23,10 @@ REMOTE3=":"
 # 1 off site backup 
 
 # backup 1
-rclone sync "$DIR" "$REMOTE1/cloud-backup"
+rclone sync "$DIR" "$REMOTE1/$REMOTE_FOLDER"
 
 # backup 2
-rclone sync "$DIR" "$REMOTE2/cloud-backup"
+rclone sync "$DIR" "$REMOTE2/$REMOTE_FOLDER"
 
 # backup 3, off site
-rclone sync --crypt "$DIR" "$REMOTE3/cloud-backup"
+rclone sync --crypt "$DIR" "$REMOTE3/$REMOTE_FOLDER"
