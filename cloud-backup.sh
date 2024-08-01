@@ -33,3 +33,6 @@ rclone sync "$DIR" "$REMOTE2/$REMOTE_FOLDER"
 
 # backup 3, off site
 rclone sync --crypt "$DIR" "$REMOTE3/$REMOTE_FOLDER"
+
+# remove compressed archive once finished to save space
+rm $BACKUP_NAME-$TIMESTAMP.tar.gz
