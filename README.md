@@ -1,10 +1,10 @@
 # Auto Backup Script
 
-## Step 1: Install rclone
+## Rclone installation
 
 Rclone should be in your distribution's repositories. If it is not, visit https://rclone.org/install/ for manual installation instructions.
 
-## rclone configuration
+## Rclone configuration
 To start the configurator, run the command:
 ```bash
 rclone config
