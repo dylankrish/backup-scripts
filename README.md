@@ -31,10 +31,10 @@ Replace `REMOTE1` and `REMOTE2` with your configured remote names and the folder
 
 ```REMOTE1="s3_encrypted:/server-backups"```
 
-Finish editing and save your changes. Make sure the script is executable:
+Finish editing and save your changes. If you want the script to be globally reachable, add it to `/usr/local/bin` with:
 
 ```bash
-sudo chmod +x /usr/local/bin/cloud-backup.sh
+sudo install -m 755 cloud-backup.sh /usr/local/bin/cloud-backup
 ```
 
 ## Automatic schedule with crontab
@@ -47,7 +47,7 @@ crontab -e
 Add the following line to run the backup script weekly. This example runs the script weekly at midnight:
 
 ```bash
-0 0 * * 0 /usr/local/bin/cloud-backup.sh >> /var/log/backup.log 2>&1
+0 0 * * 0 /usr/local/bin/cloud-backup >> /var/log/backup.log 2>&1
 ```
 A short explanation:
 
@@ -59,7 +59,7 @@ Save and exit when you're finished.
 
 Test the script by running:
 ```bash
-~/backup-scripts/cloud-backup.sh >> /var/log/backup.log
+/usr/local/bin/cloud-backup >> /var/log/backup.log
 ```
 
 You can check from rclone if the script appears on your remote.
