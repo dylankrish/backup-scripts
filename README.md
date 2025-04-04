@@ -2,7 +2,7 @@
 
 ## Rclone installation
 
-Rclone should be in your distribution's repositories. If it is not, visit https://rclone.org/install/ for manual installation instructions.
+Rclone should be in your distribution's repositories. If not, visit https://rclone.org/install/ for manual installation instructions.
 
 ## Rclone configuration
 To start the configurator, run the command:
